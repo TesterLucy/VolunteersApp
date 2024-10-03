@@ -18,7 +18,7 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
     .then(data => {
         if (data.message === 'Inicio de sesión exitoso') {
             alert('Inicio de sesión exitoso');
-            window.location.href = 'dashboard.html'; // Redirige a la página del dashboard
+            window.location.href = 'nuevo_voluntariado.html'; // Redirige a la página del dashboard
         } else {
             alert('Usuario o contraseña incorrectos');
         }
