@@ -1,0 +1,97 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif; /* Asegúrate de usar una fuente legible */
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #00292f; /* Fondo más oscuro */
+}
+
+.container, .welcome-container {
+    background-color: #074742; /* Fondo del contenedor en verde oscuro */
+    color: white;
+    padding: 30px;
+    border-radius: 15px;
+    width: 350px; /* Ancho fijo para los formularios */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Sombra sutil */
+}
+
+h1, h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #ffba63; /* Color amarillo suave para los títulos */
+    font-weight: bold;
+    text-align: center;
+}
+
+p {
+    font-size: 16px;
+    margin-bottom: 30px;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.button-group, .forgot-password {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Separación entre botones */
+    margin-top: 20px;
+}
+
+button {
+    background-color: #ffba63; /* Fondo amarillo suave */
+    color: black;
+    border: none;
+    border-radius: 12px;
+    padding: 12px 0;
+    font-size: 18px; /* Tamaño del texto del botón */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #e6a350; /* Color más oscuro al hacer hover */
+}
+
+.cancel-button {
+    background-color: #e74c3c; /* Botón cancelar en rojo */
+    color: white;
+}
+
+.cancel-button:hover {
+    background-color: #c0392b; /* Botón cancelar con hover en un rojo más oscuro */
+}
+
+/* Para alinear los botones en la pantalla de bienvenida */
+.welcome-container {
+    text-align: center;
+}
+
