@@ -1,8 +1,16 @@
-// Validación de mayor de edad en el registro
 document.getElementById('registerForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Evita que se envíe el formulario
+    event.preventDefault(); // Evita que se envíe el formulario de inmediato
 
-    const birthdate = new Date(document.getElementById('birthdate').value);
+    const userData = {
+        username: document.getElementById('username').value,
+        email: document.getElementById('email').value,
+        password: document.getElementById('password').value,
+        cedula: document.getElementById('cedula').value,
+        birthdate: document.getElementById('birthdate').value
+    };
+
+    // Verifica si el usuario es mayor de 18 años antes de enviar los datos al servidor
+    const birthdate = new Date(userData.birthdate);
     const today = new Date();
     const age = today.getFullYear() - birthdate.getFullYear();
     const monthDifference = today.getMonth() - birthdate.getMonth();
@@ -11,21 +19,30 @@ document.getElementById('registerForm').addEventListener('submit', function(even
     if (age < 18 || (age === 18 && (monthDifference < 0 || (monthDifference === 0 && dayDifference < 0)))) {
         alert("Debes ser mayor de 18 años para registrarte.");
     } else {
-        alert("Registro exitoso.");
-        // Aquí podrías enviar el formulario si pasa la validación
+        // Enviar los datos al servidor para el registro
+        fetch('http://localhost:3000/register', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(userData)
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.message === 'Registro exitoso') {
+                alert('Registro exitoso. Ahora puedes iniciar sesión.');
+                window.location.href = 'login.html'; // Redirige a la página de inicio de sesión
+            } else {
+                alert(data.message); // Muestra el error si el usuario ya existe
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('Ocurrió un error al intentar registrarse. Inténtalo nuevamente.');
+        });
     }
 });
-
-// Evento para el formulario de "Olvidé mi contraseña"
-document.getElementById('forgotPasswordForm')?.addEventListener('submit', function(event) {
-    event.preventDefault();
-    const email = document.getElementById('email').value;
-
-    // Aquí puedes agregar la lógica para enviar el correo de recuperación
-    alert("Se ha enviado un correo de recuperación a " + email);
-});
-
-// Evento para el botón de cancelar (aplicable para cualquier formulario)
-document.getElementById('cancelButton').addEventListener('click', function() {
-    window.location.href = 'wellcome.html'; // Limpia el formulario
+document.getElementById('cancelButton').addEventListener('click', function () {
+    document.getElementById('registerForm').reset();
+    window.location.href = 'wellcome.html'; // Cambia 'voluntariado_normal.html' por tu página de voluntariado normal
 });
