@@ -32,3 +32,7 @@ document.getElementById('cancelButton').addEventListener('click', function () {
     document.getElementById('loginForm').reset();
     window.location.href = 'wellcome.html'; // Cambia 'voluntariado_normal.html' por tu página de voluntariado normal
 });
+document.getElementById('forgotPasswordButton').addEventListener('click', function () {
+    document.getElementById('loginForm').reset();
+    window.location.href = 'forgotpass.html'; // Cambia 'voluntariado_normal.html' por tu página de voluntariado normal
+});

@@ -26,5 +26,5 @@ document.getElementById('forgotPasswordForm')?.addEventListener('submit', functi
 });
 // Evento para el botón de cancelar
 document.getElementById('cancelButton')?.addEventListener('click', function() {
-    window.location.href = 'wellcome.html';
+    window.location.href = 'login.html';
 });
