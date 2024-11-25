@@ -1,0 +1,93 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Georgia', serif;
+}
+
+/* Fondo de la página */
+body {
+    background: linear-gradient(to bottom right, #f5f5f5, #e0e0e0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Contenedor del certificado */
+.certificate-container {
+    width: 70%;
+    max-width: 900px;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Borde decorativo */
+.certificate-border {
+    border: 5px double #333;
+    padding: 20px;
+    position: relative;
+}
+
+/* Contenido del certificado */
+.certificate-content {
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(to bottom, #fafafa, #f4f4f4);
+    border-radius: 10px;
+}
+
+/* Título principal */
+.certificate-content h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+/* Subtítulo */
+.certificate-content .subheading {
+    font-size: 1.2rem;
+    color: #777;
+    margin-bottom: 0.5rem;
+}
+
+/* Nombre del voluntario */
+.certificate-content h2 {
+    font-size: 2rem;
+    color: #222;
+    margin-bottom: 1rem;
+}
+
+/* Descripción */
+.certificate-content .description {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+/* Fecha de emisión */
+.certificate-content .footer {
+    font-size: 0.9rem;
+    color: #888;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* Firma */
+.signature {
+    text-align: center;
+    margin-top: 3rem;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.signature p:first-child {
+    margin-bottom: 0.5rem;
+    color: #333;
+}

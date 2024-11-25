@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voluntariado para Experiencia</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>VOLUNTARIOS</h2>
+
+        <div id="voluntarios-lista"></div> <!-- Contenedor para la lista de voluntarios -->
+
+        <!-- Formulario de edición de voluntarios (oculto inicialmente) -->
+        <div id="editFormContainer" style="display: none;">
+            <h3>Editar Voluntario</h3>
+            <form id="editForm">
+                <label for="editUsername">Usuario:</label>
+                <input type="text" id="editUsername">
+                
+                <label for="editEmail">Email:</label>
+                <input type="email" id="editEmail">
+
+                <label for="editCedula">Cédula:</label>
+                <input type="text" id="editCedula">
+
+                <label for="editBirthdate">Fecha de Nacimiento:</label>
+                <input type="date" id="editBirthdate">
+
+                <button type="submit" id="saveButton">Guardar</button>
+                <button type="button" id="cancelButton">Cancelar</button>
+            </form>
+        </div>
+
+        <button id="logoutButton">Cerrar Sesión</button>
+        <button id="salirButton">SALIR</button>
+    </div>
+
+    <script src="../js/editar_voluntarios_general.js"></script>
+</body>
+</html>
